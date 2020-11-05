@@ -6,35 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".OnboardingActivity">
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/sign_in_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="124dp"
-        android:background="@drawable/btn_round"
         android:fontFamily="@font/poppins_semibold"
         android:text="Login"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        app:backgroundTint="@android:color/holo_red_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/buttonShape"
+        app:strokeColor="@color/blackColor"
+        app:strokeWidth="2dp" />
 
-    <Button
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/sign_up_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/btn_round_white"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Register"
         android:textAllCaps="false"
         android:textColor="@color/blackColor"
+        app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
-
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_button"
+        app:shapeAppearanceOverlay="@style/buttonShape"
+        app:strokeColor="@color/blackColor"
+        app:strokeWidth="2dp" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
@@ -82,12 +93,12 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/sign_in_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:tabIndicator="@color/white"
         app:layout_constraintHorizontal_bias="0.498"
-        app:tabBackground="@drawable/tab_selector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.878" />
+        app:layout_constraintVertical_bias="0.878"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabIndicator="@color/white" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
