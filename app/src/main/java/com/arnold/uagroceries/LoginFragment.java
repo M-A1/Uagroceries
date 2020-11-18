@@ -1,19 +1,28 @@
 package com.arnold.uagroceries;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link LoginFragment#newInstance} factory method to
+ * Use the {@link LoginFragment newInstance} factory method to
  * create an instance of this fragment.
  */
 public class LoginFragment extends Fragment {
+
+    private TextView registerTextView;
+    private Button loginButton;
+
 
 
     public LoginFragment() {
@@ -21,11 +30,6 @@ public class LoginFragment extends Fragment {
     }
 
 
-    public static LoginFragment newInstance(String param1, String param2) {
-        LoginFragment fragment = new LoginFragment();
-
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,42 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View RootView = inflater.inflate(R.layout.fragment_login, container, false);
+
+
+        registerTextView = RootView.findViewById(R.id.register_TextView);
+        loginButton = RootView.findViewById(R.id.login_button);
+
+
+        registerTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Refactor this
+                RegistrationFragment registrationFragment  = new RegistrationFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container_view,registrationFragment).remove(LoginFragment.this).commit();
+
+            }
+        });
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent homeIntent = new Intent(getActivity(),HomeActivity.class);
+                startActivity(homeIntent);
+                getActivity().finish();
+            }
+        });
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+
+        return RootView;
     }
+
+
 }
