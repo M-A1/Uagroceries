@@ -1,4 +1,4 @@
-package com.arnold.uagroceries;
+package com.arnold.uagroceries.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.arnold.uagroceries.R;
 
 public class Delivery2Fragment extends Fragment {
 

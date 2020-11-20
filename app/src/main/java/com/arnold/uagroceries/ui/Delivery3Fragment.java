@@ -1,4 +1,4 @@
-package com.arnold.uagroceries;
+package com.arnold.uagroceries.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,11 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class Delivery1Fragment extends Fragment {
+import com.arnold.uagroceries.R;
+
+public class Delivery3Fragment extends Fragment {
 
     View view;
 
-    public Delivery1Fragment() {
+    public Delivery3Fragment() {
 
     }
 
@@ -22,7 +24,7 @@ public class Delivery1Fragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.delivery_fragment, container, false);
+        view = inflater.inflate(R.layout.delivery3_fragment, container, false);
         return view;
 
     }
