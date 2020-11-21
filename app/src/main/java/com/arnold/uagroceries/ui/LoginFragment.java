@@ -1,9 +1,6 @@
 package com.arnold.uagroceries.ui;
 
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,11 +21,10 @@ import com.arnold.uagroceries.R;
  */
 public class LoginFragment extends Fragment {
 
+    private final String TAG = getClass().getSimpleName();
+
     private TextView registerTextView, forgotPasswordTextView;
     private Button loginButton;
-
-    private AlertDialog alertDialog;
-    private AlertDialog.Builder dialogBox;
 
 
     public LoginFragment() {
@@ -81,7 +77,7 @@ public class LoginFragment extends Fragment {
         forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialogBox(R.layout.fragment_login);
+                showDialogBox();
             }
         });
 
@@ -90,25 +86,13 @@ public class LoginFragment extends Fragment {
         return RootView;
     }
 
-    public void showDialogBox(int layout) {
+    public void showDialogBox() {
 
-        dialogBox = new AlertDialog.Builder(getContext());
-        View layoutView = getLayoutInflater().inflate(layout, null);
+        FragmentManager fn = getActivity().getSupportFragmentManager();
+        ForgotPasswordFragment forgotPasswordFragment = new ForgotPasswordFragment();
+        forgotPasswordFragment.show(fn, "fragment_edit_name");
 
-
-        Button submitDialogButton = layoutView.findViewById(R.id.submit_email_button);
-        dialogBox.setView(layout);
-
-        alertDialog = dialogBox.create();
-        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        alertDialog.show();
-
-        submitDialogButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.dismiss();
-            }
-        });
     }
+
 
 }
