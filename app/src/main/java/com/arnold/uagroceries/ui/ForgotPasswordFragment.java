@@ -64,6 +64,5 @@ public class ForgotPasswordFragment extends DialogFragment {
         window.setLayout((int) (width * 0.9), WindowManager.LayoutParams.WRAP_CONTENT);
         window.setGravity(Gravity.CENTER);
 
-
     }
 }
