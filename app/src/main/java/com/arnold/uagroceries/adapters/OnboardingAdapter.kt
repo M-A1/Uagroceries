@@ -3,9 +3,9 @@ package com.arnold.uagroceries.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.arnold.uagroceries.ui.Delivery1Fragment
-import com.arnold.uagroceries.ui.Delivery2Fragment
-import com.arnold.uagroceries.ui.Delivery3Fragment
+import com.arnold.uagroceries.ui.onboarding.fragments.Delivery1Fragment
+import com.arnold.uagroceries.ui.onboarding.fragments.Delivery2Fragment
+import com.arnold.uagroceries.ui.onboarding.fragments.Delivery3Fragment
 
 class OnboardingAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
@@ -13,7 +13,6 @@ class OnboardingAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapt
     companion object {
         private const val NUM_OF_PAGES: Int = 3
     }
-
 
     override fun getItemCount(): Int {
         return NUM_OF_PAGES

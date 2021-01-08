@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 29
@@ -89,6 +90,11 @@ android {
     apply plugin: "androidx.navigation.safeargs"
     apply plugin: 'kotlin-android'
     apply plugin: "kotlin-parcelize"
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
 
 //apply plugin: 'dagger.hilt.android.plugin'
